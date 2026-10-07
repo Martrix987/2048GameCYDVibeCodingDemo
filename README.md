@@ -1,31 +1,29 @@
-# 2048GameCYDVibeCodingDemo
+# 2048 Game CYD Vibe Coding Demo
 
-Key Features
+PlatformIO firmware for the ESP32-2432S028R Cheap Yellow Display (CYD).
 
-    Responsive Touch Controls: Smooth swipe gestures powered by the XPT2046 touch controller with customizable noise filtering and deadzones.
+## Hardware
 
-    Vibe Power-Ups:
+- ESP32-2432S028R with 240x320 ILI9341 TFT
+- ILI9341 TFT SPI (SCK GPIO 14, MOSI GPIO 13, MISO GPIO 12, CS GPIO 15, DC GPIO 2, backlight GPIO 21)
+- XPT2046 touch controller using the CYD example's separate pin wiring (SCK GPIO 25, MOSI GPIO 32, MISO GPIO 39, CS GPIO 33, IRQ GPIO 36)
+- RGB LED: red GPIO 4, green GPIO 16, blue GPIO 17 (active-low)
+- Buzzer: GPIO 26
 
-        ↩️ Undo: Revert your last move.
+The display uses the same TFT_eSPI library, `ILI9341_2` driver, SPI pin mapping, RGB order, and inversion settings as the known-working CYD example in `R6-drone/CYD`. Touch uses the example's bit-banged pin wiring, avoiding conflicts with the TFT SPI bus. The default `esp32dev` target is intentional: CYD boards are commonly sold with different module/flash labels even though the CYD uses an ESP32-WROOM-compatible Arduino target.
 
-        💣 Bomb: Tap to destroy any unwanted tile on the grid.
+## Build and upload
 
-        ⚡ 2x Multiplier: Instantly double the value of your highest active tile.
+1. Install PlatformIO in VS Code.
+2. Open this folder as the PlatformIO project.
+3. Update `upload_port` in `platformio.ini` if PlatformIO does not detect the CYD automatically.
+4. Run **PlatformIO: Build**, then **PlatformIO: Upload**.
+5. Open a 115200 baud serial monitor.
 
-    Hardware Integration:
+If touch coordinates are mirrored or offset, adjust `x_min`, `x_max`, `y_min`, and `y_max` in `src/main.cpp` for the individual panel.
 
-        Reactive RGB LED: Dynamic color pulsing based on active board combos and tile values.
+## Controls
 
-        Piezo Audio SFX: Real-time audio chimes for swipes, tile merges, power-up usage, and game over sequences.
-
-    Flicker-Free Performance: Off-screen sprite rendering via LovyanGFX for smooth frame updates.
-
-    Persistent High Score: Uses ESP32 Preferences.h to store your top score in non-volatile flash memory across reboots.
-
-Hardware Stack
-
-    Microcontroller: ESP32-D0WDQ6 (ESP32-2432S028R)
-
-    Display: 2.8" SPI TFT (240x320 resolution)
-
-    Libraries: LovyanGFX, Preferences
+- Swipe on the grid to move tiles.
+- Tap **UNDO**, **BOMB**, or **2x UP** in the top bar.
+- When BOMB is active, tap a non-empty tile.
