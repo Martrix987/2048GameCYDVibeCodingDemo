@@ -201,6 +201,24 @@ The bottom `COMBO` label and bar show the current consecutive-merge multiplier. 
 
 Each colored grid square contains its numeric tile value (`2`, `4`, `8`, and so on). Empty squares intentionally have no number.
 
+Tile colors change with the value:
+
+```text
+2     cream
+4     pale gold
+8     orange
+16    orange-red
+32    coral
+64    red
+128   gold
+256   bright gold
+512   amber
+1024  violet
+2048  deep violet
+```
+
+Values above 2048 use a dark violet fallback color.
+
 ## Controls
 
 - Swipe on the grid to move tiles.

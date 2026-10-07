@@ -23,7 +23,23 @@ uint32_t lastMerge = 0, highScore = 0, touchStartMs = 0; uint8_t combo = 1; bool
 bool gameFinished = false;
 uint16_t color(uint8_t r, uint8_t g, uint8_t b) { return display.color565(r, g, b); }
 void led(bool r, bool g, bool b) { digitalWrite(RED, r ? LOW : HIGH); digitalWrite(GREEN, g ? LOW : HIGH); digitalWrite(BLUE, b ? LOW : HIGH); }
-uint16_t tileColor(uint16_t v) { if (!v) return color(55,55,70); if (v <= 64) return color(55,145,170); if (v <= 512) return color(210,120,50); return color(150,55,200); }
+uint16_t tileColor(uint16_t v) {
+  switch (v) {
+    case 0: return color(55,55,70);
+    case 2: return color(238,228,218);
+    case 4: return color(237,224,200);
+    case 8: return color(242,177,121);
+    case 16: return color(245,149,99);
+    case 32: return color(246,124,95);
+    case 64: return color(246,94,59);
+    case 128: return color(237,207,114);
+    case 256: return color(237,204,97);
+    case 512: return color(237,200,80);
+    case 1024: return color(180,110,230);
+    case 2048: return color(130,70,220);
+    default: return color(90,45,150);
+  }
+}
 const uint8_t glyphs[10][7] = {
   {0x0E,0x11,0x13,0x15,0x19,0x11,0x0E}, {0x04,0x0C,0x04,0x04,0x04,0x04,0x0E},
   {0x0E,0x11,0x01,0x02,0x04,0x08,0x1F}, {0x1E,0x01,0x01,0x0E,0x01,0x01,0x1E},
