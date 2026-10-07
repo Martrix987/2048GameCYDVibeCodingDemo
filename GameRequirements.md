@@ -3,7 +3,7 @@
 Target Hardware: ESP32-2432S028R (Cheap Yellow Display / CYD)
 Display: 2.8" TFT (240x320 portrait mode)
 Peripherals: XPT2046 Touch, Onboard RGB LED (Red: GPIO 4, Green: GPIO 16, Blue: GPIO 17), Onboard Buzzer (GPIO 26)
-Library: LovyanGFX
+Library: TFT_eSPI (configured with the proven CYD `ILI9341_2` setup)
 
 ## 1. Screen & UI Layout Adjustments (240 x 320 px)
 - Power-up Bar (Y: 55px to 80px):

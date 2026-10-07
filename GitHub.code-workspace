@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "marnix.work",
+			"path": "../../../Desktop/Github/marnix.work"
+		},
+		{
+			"name": "LocaleAICodeGenerationTesting",
+			"path": "../LocaleAICodeGenerationTesting"
+		},
+		{
+			"name": "2048GameCYDVibeCodingDemo",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "marnix.work"
+	}
+}

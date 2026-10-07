@@ -1,31 +1,75 @@
-# 2048GameCYDVibeCodingDemo
+# 2048 Game CYD Vibe Coding Demo
 
-Key Features
+An Arduino/PlatformIO 2048 game for the ESP32-2432S028R Cheap Yellow Display (CYD).
 
-    Responsive Touch Controls: Smooth swipe gestures powered by the XPT2046 touch controller with customizable noise filtering and deadzones.
+The project is currently focused on making the core game reliable on the real hardware:
 
-    Vibe Power-Ups:
+- 4x4 2048 board
+- CYD ILI9341 display
+- CYD XPT2046 touchscreen
+- Swipe controls in all four directions
+- Visible tile values with custom bitmap digits
+- Tile colors based on their values
+- Score and persistent best score
+- Win and game-over screens
+- RGB LED and buzzer feedback
+- Serial touchscreen diagnostics
 
-        ↩️ Undo: Revert your last move.
+## Hardware
 
-        💣 Bomb: Tap to destroy any unwanted tile on the grid.
+- ESP32-2432S028R CYD
+- 240x320 ILI9341 TFT
+- XPT2046 resistive touchscreen
+- RGB LED
+- Buzzer
 
-        ⚡ 2x Multiplier: Instantly double the value of your highest active tile.
+The exact wiring, display driver setup, touch implementation, coordinate mapping, rendering details, and troubleshooting steps are documented in [`TECHNICAL_README.md`](TECHNICAL_README.md).
 
-    Hardware Integration:
+## Quick start
 
-        Reactive RGB LED: Dynamic color pulsing based on active board combos and tile values.
+1. Install PlatformIO in VS Code.
+2. Open this folder as a PlatformIO project.
+3. Connect the CYD over USB.
+4. Run **PlatformIO: Clean**.
+5. Run **PlatformIO: Build**.
+6. Run **PlatformIO: Upload**.
+7. Open a serial monitor at `115200` baud.
 
-        Piezo Audio SFX: Real-time audio chimes for swipes, tile merges, power-up usage, and game over sequences.
+If PlatformIO does not find the board automatically, set `upload_port` in [`platformio.ini`](platformio.ini).
 
-    Flicker-Free Performance: Off-screen sprite rendering via LovyanGFX for smooth frame updates.
+## How to play
 
-    Persistent High Score: Uses ESP32 Preferences.h to store your top score in non-volatile flash memory across reboots.
+- Swipe on the board to move the tiles.
+- Matching adjacent tiles merge into their doubled value.
+- Each valid move adds a new tile.
+- Reach `2048` to win.
+- If no empty cell or legal merge remains, the game is over.
+- Tap the win or game-over screen to restart.
 
-Hardware Stack
+Power-up controls are intentionally disabled in the current core-game build while board rendering and game-state behavior are being validated.
 
-    Microcontroller: ESP32-D0WDQ6 (ESP32-2432S028R)
+## On-screen layout
 
-    Display: 2.8" SPI TFT (240x320 resolution)
+- Header: title, score, and best score.
+- Center: 4x4 tile grid.
+- Bottom: combo indicator and score activity bar.
+- End state: large `YOU WIN!` or `GAME OVER` screen with restart instructions.
 
-    Libraries: LovyanGFX, Preferences
+Tile colors change as values increase, from cream (`2`) through orange/red, gold, and violet (`1024`/`2048`). Empty cells are dark gray.
+
+## Project structure
+
+```text
+src/main.cpp                         Hardware integration and UI
+src/game_logic.cpp                   Board rules and scoring
+include/game_logic.h                 Game API and board types
+include/User_Setup.h                 TFT_eSPI display setup
+lib/XPT2046_Bitbang_Slim/            CYD touchscreen driver
+test/game_logic_test.cpp             Native game-logic test
+platformio.ini                       Build environments and dependencies
+TECHNICAL_README.md                  Detailed implementation reference
+```
+
+## Troubleshooting
+
+If the display is noisy or blank, perform a clean build and upload. If touch is not responding, open the serial monitor and look for `[TOUCH DOWN]`, `[TOUCH MOVE]`, and `[TOUCH UP]` messages. The full diagnostic interpretation guide is in [`TECHNICAL_README.md`](TECHNICAL_README.md).
