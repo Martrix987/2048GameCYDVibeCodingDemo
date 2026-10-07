@@ -1,4 +1,6 @@
-.pio/build/cyd/src/main.cpp.o: src/main.cpp \
+.pio/build/cyd/lib458/XPT2046_Bitbang_Slim/XPT2046_Bitbang.cpp.o: \
+ lib/XPT2046_Bitbang_Slim/XPT2046_Bitbang.cpp \
+ lib/XPT2046_Bitbang_Slim/XPT2046_Bitbang.h \
  C:/Users/marni/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
  C:/Users/marni/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp_arduino_version.h \
  C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/FreeRTOS.h \
@@ -132,34 +134,4 @@
  C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include/esp_spi_flash_counters.h \
  C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32/spiram.h \
  C:/Users/marni/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/libraries/Preferences/src/Preferences.h \
- .pio/libdeps/cyd/TFT_eSPI/TFT_eSPI.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/cores/esp32/Print.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/libraries/SPI/src/SPI.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-spi.h \
- .pio/libdeps/cyd/TFT_eSPI/User_Setup_Select.h \
- .pio/libdeps/cyd/TFT_eSPI/TFT_Drivers/ILI9341_Defines.h \
- .pio/libdeps/cyd/TFT_eSPI/Processors/TFT_eSPI_ESP32.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/spi_reg.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/include/driver/spi_master.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/include/driver/spi_common.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/include/soc/lldesc.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/include/esp32/rom/lldesc.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/include/soc/spi_periph.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/periph_defs.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/soc_pins.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/gpio_pins.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/spi_pins.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/sdio_slave_pins.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/sdmmc_pins.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/spi_struct.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/spi_types.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/esp32/include/hal/gpio_ll.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/rtc_cntl_reg.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/rtc_io_reg.h \
- C:/Users/marni/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/platform_port/include/hal/misc.h \
- .pio/libdeps/cyd/TFT_eSPI/Extensions/Touch.h \
- .pio/libdeps/cyd/TFT_eSPI/Extensions/Button.h \
- .pio/libdeps/cyd/TFT_eSPI/Extensions/Sprite.h \
- lib/XPT2046_Bitbang_Slim/XPT2046_Bitbang.h include/game_logic.h
+ C:/Users/marni/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h
